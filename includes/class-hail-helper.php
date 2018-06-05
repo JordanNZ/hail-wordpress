@@ -303,12 +303,17 @@ class Hail_Helper {
 
   // once we have the organisations we can fetch the organisatinso private tags
   public function getPrivateTags() {
-    return $this->call('api/v1/organisations/' . get_option('spf_hail_orginization_id') . '/private-tags');
+    return $this->call('api/v1/organisations/' . get_option('organisation_id') . '/private-tags');
   }
 
   public function getTags() {
-    return $this->call('api/v1/organisations/' . get_option('spf_hail_orginization_id') . '/tags');
+    return $this->call('api/v1/organisations/' . get_option('organisation_id') . '/tags');
   }
+  
+  public function getArticles() {
+    return $this->call('api/v1/organisations/' . get_option('organisation_id') . '/tags');
+  }
+
 
   public function getArticle($id) {
     return $this->call('api/v1/articles/' . $id);
